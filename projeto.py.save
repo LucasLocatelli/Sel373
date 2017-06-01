@@ -1,0 +1,22 @@
+import time
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BOARD) #extrai a pinagem da placa que esta sendo usada
+GPIO.setup(7, GPIO.OUT) #define o pino 7 como saida
+
+from firebase import firebase #importa a biblioteca de compatibilidade com firebase
+
+firebase = firebase.FirebaseApplication('https://autohome-cfe1f.firebaseio.com/', None) 
+
+
+while True:
+    result = firebase.get('/TipoCafe', None)
+    if result is not None:
+        for chave, resultado in result.items():   
+            if resultado == "
+            time.sleep(10)
+            firebase.delete('/TipoCafe', chave)
+    
+
+  
+
